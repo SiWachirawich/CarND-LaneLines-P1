@@ -17,8 +17,8 @@ My pipeline consisted of 5 steps.
 - use gaussain blur with `5x5` kernel to smooth the image
 - use canny to detect edge and conner with low_threshold = `50`, high_threshold = `150`  
   ![canny](./report_img/edge.png)
-- crop result of canny using vertices `[150, img.shape[0]], [450, 330], [500, 330], [950, img.shape[0]]`
-  ![canny](./report_img/roi.png)
+- crop result of canny using vertices `[150, img.shape[0]], [450, 330], [500, 330], [950, img.shape[0]]`  
+  ![roi](./report_img/roi.png)
 - Finally use hough lines to find lane
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by 
@@ -27,7 +27,7 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 - Now I have `slope`, `bias` and `y = [img.shape[0], 330]` which are lowest and highest y of vertices that I uses.  
 So `x = y-bias/slope`. Apply to both left and right lanes, I will have two long lines for both lanes.  
 
-![canny](./report_img/result.png)
+![result](./report_img/result.png)
 
 ---
 
